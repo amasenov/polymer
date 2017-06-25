@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../my-new-view/my-new-view.html">
+<dom-module id="my-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <my-new-view name="new-view"></my-new-view>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class MyApp extends Polymer.Element {
+      static get is() { return 'my-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'this is my first Polymer app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(MyApp.is, MyApp);
+  </script>
+</dom-module>
